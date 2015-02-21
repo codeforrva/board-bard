@@ -1,0 +1,24 @@
+{
+  "name": "board-bard",
+  "version": "1.0.0",
+  "description": "Find available seats for VA boards and commissions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/codeforrva/board-bard"
+  },
+  "author": "Code for RVA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codeforrva/board-bard/issues"
+  },
+  "homepage": "https://github.com/codeforrva/board-bard",
+  "dependencies": {
+    "express": "^4.11.2",
+    "express-json": "^1.0.0",
+    "mongoose": "^3.8.23"
+  }
+}
