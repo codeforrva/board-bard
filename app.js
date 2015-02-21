@@ -23,6 +23,20 @@ app.use(methodOverride());
 // Public assets
 app.use(express.static(__dirname + '/public'));
 
+//Routes
+app.get('/',function(request, response) {
+});
+
+app.get('*',function(request, response) {
+    response.status(403).send();
+});
+
+app.get('/json',function(request, response) {
+    http.get('https://vacode.org/api/structure/?key=BTailEVQw5FZ4mHS',function(response){
+        console.log(response);
+    });
+});
+
 // Fire up our server
 if (require.main === module) {
   http.createServer(app).listen(app.get('port'), function() {
