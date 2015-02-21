@@ -7,7 +7,8 @@ var express = require('express'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
-    csrf = require('csrf');
+    csrf = require('csrf'),
+    http = require('http');
 
 config = require(path.join(__dirname, 'lib', 'config'));
 
@@ -15,7 +16,6 @@ var app = express();
 
 // App setup
 app.set('port', process.env.PORT || 3000);
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride());
@@ -26,10 +26,10 @@ app.use(express.static(__dirname + '/public'));
 // Fire up our server
 if (require.main === module) {
   http.createServer(app).listen(app.get('port'), function() {
-    console.info(c.blue + 'Express server listening on port ' + app.get('port') + c.reset);
+    console.info('Express server listening on port ' + app.get('port'));
   });
 } else {
-  console.info(c.blue + 'Running app as a module' + c.reset);
+  console.info('Running app as a module');
   exports.app = app;
 }
 
